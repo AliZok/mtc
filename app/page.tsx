@@ -42,17 +42,7 @@ export default function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#024885' }}>
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/mtc-1.jpg"
-            alt="Marium Trading and Contracting"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-          <div className="absolute inset-0" style={{ backgroundColor: 'rgba(2, 72, 133, 0.85)' }}></div>
-        </div>
+      <section className="relative w-full h-screen flex items-center justify-center" style={{ backgroundColor: '#024885' }}>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Marium Trading & Contracting
@@ -69,10 +59,10 @@ export default function Home() {
               Our Services
             </a>
             <a
-              href="#contact"
+              href="#about"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border-2 border-white/30 transition-colors duration-200 backdrop-blur-sm"
             >
-              Get a Quote
+              Learn More
             </a>
           </div>
         </div>
@@ -162,79 +152,6 @@ export default function Home() {
                 Skilled workmanship and local know-how to protect your investment and improve the value of your property.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Get in Touch
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to start your project? Contact us for a free consultation and quote.
-            </p>
-          </div>
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024885] focus:border-[#024885] transition-all"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024885] focus:border-[#024885] transition-all"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024885] focus:border-[#024885] transition-all"
-                  placeholder="+374 XX XXX XXX"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Project Details
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#024885] focus:border-[#024885] transition-all"
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full px-8 py-4 text-white font-semibold rounded-lg transition-opacity duration-200 shadow-lg hover:opacity-90"
-                style={{ backgroundColor: '#cd1e29' }}
-              >
-                Send Message
-              </button>
-            </form>
           </div>
         </div>
       </section>

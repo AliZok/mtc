@@ -52,15 +52,7 @@ export default function Header() {
               About
             </a>
             <a
-              href="#contact"
-              className={`font-medium transition-colors ${
-                isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
-              }`}
-            >
-              Contact
-            </a>
-            <a
-              href="#contact"
+              href="#about"
               className="px-6 py-2 text-white font-semibold rounded-lg transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#cd1e29' }}
             >
@@ -119,16 +111,7 @@ export default function Header() {
                 About
               </a>
               <a
-                href="#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className={`font-medium transition-colors ${
-                  isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
-                }`}
-              >
-                Contact
-              </a>
-              <a
-                href="#contact"
+                href="#about"
                 onClick={() => setIsMenuOpen(false)}
                 className="px-6 py-2 text-white font-semibold rounded-lg transition-opacity hover:opacity-90 text-center"
                 style={{ backgroundColor: '#cd1e29' }}
