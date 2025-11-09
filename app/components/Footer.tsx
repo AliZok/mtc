@@ -1,3 +1,6 @@
+import { HiOutlineMapPin, HiOutlinePhone } from 'react-icons/hi2';
+import { MdEmail } from 'react-icons/md';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -28,14 +31,19 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>📍 Yerevan, Armenia</li>
-              <li>
+            <ul className="space-y-3 text-gray-400">
+              <li className="flex items-center gap-2">
+                <HiOutlineMapPin className="text-gray-400 flex-shrink-0" size={20} />
+                <span>Yerevan, Armenia</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MdEmail className="text-gray-400 flex-shrink-0" size={20} />
                 <a href="mailto:info@mariumtc.com" className="hover:text-white transition-colors">
                   info@mariumtc.com
                 </a>
               </li>
-              <li>
+              <li className="flex items-center gap-2">
+                <HiOutlinePhone className="text-gray-400 flex-shrink-0" size={20} />
                 <a href="tel:+37498850187" className="hover:text-white transition-colors">
                   +374 98 850187
                 </a>

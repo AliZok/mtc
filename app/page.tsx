@@ -2,38 +2,50 @@ import Image from "next/image";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ServiceCard from "./components/ServiceCard";
+import { 
+  HiOutlineHome, 
+  HiOutlineBuildingOffice2, 
+  HiOutlineBuildingStorefront,
+  HiOutlineWrenchScrewdriver
+} from 'react-icons/hi2';
+import { FaRoad, FaLeaf } from 'react-icons/fa';
+import { 
+  HiOutlineHandRaised, 
+  HiOutlineCurrencyDollar, 
+  HiOutlineCheckCircle 
+} from 'react-icons/hi2';
 
 export default function Home() {
   const services = [
     {
       title: "Interior Renovations",
       description: "Full interior renovations including kitchens, bathrooms, floors, and finishes. Professional craftsmanship for every room.",
-      icon: "🏠",
+      icon: HiOutlineHome,
     },
     {
       title: "Exterior Repairs",
       description: "Exterior repairs, façades, and building refits. We protect and enhance your property's curb appeal.",
-      icon: "🏗️",
+      icon: HiOutlineBuildingOffice2,
     },
     {
       title: "Garden Landscaping",
       description: "Landscape design, garden maintenance, and outdoor space transformation to create beautiful, functional areas.",
-      icon: "🌳",
+      icon: FaLeaf,
     },
     {
       title: "Road & Paving",
       description: "Small road repairs and pavement work. Quality solutions for driveways, walkways, and small infrastructure projects.",
-      icon: "🛣️",
+      icon: FaRoad,
     },
     {
       title: "Small House Construction",
       description: "Complete construction services for small houses. From foundation to finish, we build your dream home.",
-      icon: "🏡",
+      icon: HiOutlineBuildingStorefront,
     },
     {
       title: "Carpentry & Tiling",
       description: "Expert carpentry work and professional tiling services. Custom solutions for your renovation needs.",
-      icon: "🔨",
+      icon: HiOutlineWrenchScrewdriver,
     },
   ];
 
@@ -132,21 +144,27 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-5xl mb-4">🤝</div>
+              <div className="flex justify-center mb-4">
+                <HiOutlineHandRaised size={48} className="text-white" />
+              </div>
               <h3 className="text-2xl font-bold mb-3">Direct Contact</h3>
               <p className="text-white/80">
                 As a small company, you benefit from direct contact with our team, flexible scheduling, and fast responses.
               </p>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-4">💰</div>
+              <div className="flex justify-center mb-4">
+                <HiOutlineCurrencyDollar size={48} className="text-white" />
+              </div>
               <h3 className="text-2xl font-bold mb-3">Transparent Pricing</h3>
               <p className="text-white/80">
                 We pride ourselves on transparent pricing, clear timelines, and practical problem-solving on site.
               </p>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-4">✅</div>
+              <div className="flex justify-center mb-4">
+                <HiOutlineCheckCircle size={48} className="text-white" />
+              </div>
               <h3 className="text-2xl font-bold mb-3">Quality Workmanship</h3>
               <p className="text-white/80">
                 Skilled workmanship and local know-how to protect your investment and improve the value of your property.
