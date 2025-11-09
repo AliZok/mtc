@@ -1,0 +1,79 @@
+{
+  "header": {
+    "companyName": "Marium Trading & Contracting",
+    "services": "Services",
+    "about": "About",
+    "call": "Call"
+  },
+  "hero": {
+    "title": "Marium Trading & Contracting",
+    "subtitle": "Fast, affordable, reliable workmanship for your construction and renovation needs in Yerevan",
+    "ourServices": "Our Services",
+    "learnMore": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive construction and renovation solutions for residential and light commercial projects",
+    "interiorRenovations": {
+      "title": "Interior Renovations",
+      "description": "Full interior renovations including kitchens, bathrooms, floors, and finishes. Professional craftsmanship for every room."
+    },
+    "exteriorRepairs": {
+      "title": "Exterior Repairs",
+      "description": "Exterior repairs, façades, and building refits. We protect and enhance your property's curb appeal."
+    },
+    "gardenLandscaping": {
+      "title": "Garden Landscaping",
+      "description": "Landscape design, garden maintenance, and outdoor space transformation to create beautiful, functional areas."
+    },
+    "roadPaving": {
+      "title": "Road & Paving",
+      "description": "Small road repairs and pavement work. Quality solutions for driveways, walkways, and small infrastructure projects."
+    },
+    "smallHouseConstruction": {
+      "title": "Small House Construction",
+      "description": "Complete construction services for small houses. From foundation to finish, we build your dream home."
+    },
+    "carpentryTiling": {
+      "title": "Carpentry & Tiling",
+      "description": "Expert carpentry work and professional tiling services. Custom solutions for your renovation needs."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "paragraph1": "Marium Trading and Contracting LLC is a local construction and renovation specialist serving homeowners, property managers and small developers. Founded to bring dependable, practical solutions to everyday construction needs, we concentrate on work where craftsmanship and careful project management matter most.",
+    "paragraph2": "Our services include full interior renovations (kitchens, bathrooms, floors and finishes), exterior repairs and façades, carpentry, tiling, electrical and plumbing coordination, landscaping and garden design, and small road/pavement repairs.",
+    "paragraph3": "We work with trusted subcontractors and supply partners to ensure material quality while keeping costs competitive. Health and safety are priorities: our teams are insured and receive necessary medical support where required."
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "directContact": {
+      "title": "Direct Contact",
+      "description": "As a small company, you benefit from direct contact with our team, flexible scheduling, and fast responses."
+    },
+    "transparentPricing": {
+      "title": "Transparent Pricing",
+      "description": "We pride ourselves on transparent pricing, clear timelines, and practical problem-solving on site."
+    },
+    "qualityWorkmanship": {
+      "title": "Quality Workmanship",
+      "description": "Skilled workmanship and local know-how to protect your investment and improve the value of your property."
+    }
+  },
+  "footer": {
+    "companyName": "Marium Trading & Contracting",
+    "description": "Your trusted partner for construction and renovation services in Yerevan. Fast, affordable, reliable workmanship.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "aboutUs": "About Us",
+    "contactInfo": "Contact Info",
+    "location": "Yerevan, Armenia",
+    "copyright": "All rights reserved."
+  },
+  "language": {
+    "switch": "Switch Language",
+    "english": "English",
+    "armenian": "Armenian"
+  }
+}
+

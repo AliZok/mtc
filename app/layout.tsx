@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { getLocale } from 'next-intl/server';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,15 +18,18 @@ export const metadata: Metadata = {
   description: "Marium Trading and Contracting LLC is a Yerevan-based construction company specializing in residential and light commercial renovation, interior and exterior remodeling, garden landscaping, and small house construction.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  
   return (
-    <html lang="en">
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         {children}
       </body>

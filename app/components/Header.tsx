@@ -1,10 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname, Link } from '@/i18n/routing';
 
 export default function Header() {
+  const t = useTranslations('header');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +20,11 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const switchLanguage = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+    setIsLangMenuOpen(false);
+  };
 
   return (
     <header
@@ -24,14 +36,14 @@ export default function Header() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a
+          <Link
             href="/"
             className={`text-2xl font-bold transition-colors ${
               isScrolled ? "text-[#024885]" : "text-white"
             }`}
           >
-            Marium Trading & Contracting
-          </a>
+            {t('companyName')}
+          </Link>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -41,7 +53,7 @@ export default function Header() {
                 isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
               }`}
             >
-              Services
+              {t('services')}
             </a>
             <a
               href="#about"
@@ -49,8 +61,44 @@ export default function Header() {
                 isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
               }`}
             >
-              About
+              {t('about')}
             </a>
+            
+            {/* Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className={`px-4 py-2 rounded-lg transition-colors font-medium ${
+                  isScrolled 
+                    ? "text-gray-700 hover:bg-gray-100" 
+                    : "text-white hover:bg-white/10"
+                }`}
+                aria-label="Switch language"
+              >
+                {locale === 'en' ? 'EN' : 'ՀԱՅ'}
+              </button>
+              {isLangMenuOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                  <button
+                    onClick={() => switchLanguage('en')}
+                    className={`w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors ${
+                      locale === 'en' ? 'bg-blue-50 text-[#024885] font-semibold' : 'text-gray-700'
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => switchLanguage('hy')}
+                    className={`w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors ${
+                      locale === 'hy' ? 'bg-blue-50 text-[#024885] font-semibold' : 'text-gray-700'
+                    }`}
+                  >
+                    Հայերեն
+                  </button>
+                </div>
+              )}
+            </div>
+            
             <a
               href="tel:+37498850187"
               className="px-6 py-2 text-white font-semibold rounded-lg transition-opacity hover:opacity-90 flex items-center gap-2"
@@ -67,7 +115,7 @@ export default function Header() {
               >
                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Call
+              {t('call')}
             </a>
           </div>
 
@@ -110,7 +158,7 @@ export default function Header() {
                   isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
                 }`}
               >
-                Services
+                {t('services')}
               </a>
               <a
                 href="#about"
@@ -119,8 +167,43 @@ export default function Header() {
                   isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
                 }`}
               >
-                About
+                {t('about')}
               </a>
+              
+              {/* Mobile Language Switcher */}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    switchLanguage('en');
+                    setIsMenuOpen(false);
+                  }}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    locale === 'en'
+                      ? 'bg-[#024885] text-white'
+                      : isScrolled
+                      ? 'bg-gray-100 text-gray-700'
+                      : 'bg-white/10 text-white'
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    switchLanguage('hy');
+                    setIsMenuOpen(false);
+                  }}
+                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    locale === 'hy'
+                      ? 'bg-[#024885] text-white'
+                      : isScrolled
+                      ? 'bg-gray-100 text-gray-700'
+                      : 'bg-white/10 text-white'
+                  }`}
+                >
+                  Հայերեն
+                </button>
+              </div>
+              
               <a
                 href="tel:+37498850187"
                 onClick={() => setIsMenuOpen(false)}
@@ -138,7 +221,7 @@ export default function Header() {
                 >
                   <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                Call
+                {t('call')}
               </a>
             </div>
           </div>
@@ -147,6 +230,3 @@ export default function Header() {
     </header>
   );
 }
-
-
-

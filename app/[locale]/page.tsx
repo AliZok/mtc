@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ServiceCard from "./components/ServiceCard";
+import { getTranslations } from 'next-intl/server';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import ServiceCard from "../components/ServiceCard";
 import { 
   HiOutlineHome, 
   HiOutlineBuildingOffice2, 
@@ -15,36 +16,43 @@ import {
   HiOutlineCheckCircle 
 } from 'react-icons/hi2';
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations();
+
   const services = [
     {
-      title: "Interior Renovations",
-      description: "Full interior renovations including kitchens, bathrooms, floors, and finishes. Professional craftsmanship for every room.",
+      title: t('services.interiorRenovations.title'),
+      description: t('services.interiorRenovations.description'),
       icon: HiOutlineHome,
     },
     {
-      title: "Exterior Repairs",
-      description: "Exterior repairs, façades, and building refits. We protect and enhance your property's curb appeal.",
+      title: t('services.exteriorRepairs.title'),
+      description: t('services.exteriorRepairs.description'),
       icon: HiOutlineBuildingOffice2,
     },
     {
-      title: "Garden Landscaping",
-      description: "Landscape design, garden maintenance, and outdoor space transformation to create beautiful, functional areas.",
+      title: t('services.gardenLandscaping.title'),
+      description: t('services.gardenLandscaping.description'),
       icon: FaLeaf,
     },
     {
-      title: "Road & Paving",
-      description: "Small road repairs and pavement work. Quality solutions for driveways, walkways, and small infrastructure projects.",
+      title: t('services.roadPaving.title'),
+      description: t('services.roadPaving.description'),
       icon: FaRoad,
     },
     {
-      title: "Small House Construction",
-      description: "Complete construction services for small houses. From foundation to finish, we build your dream home.",
+      title: t('services.smallHouseConstruction.title'),
+      description: t('services.smallHouseConstruction.description'),
       icon: HiOutlineBuildingStorefront,
     },
     {
-      title: "Carpentry & Tiling",
-      description: "Expert carpentry work and professional tiling services. Custom solutions for your renovation needs.",
+      title: t('services.carpentryTiling.title'),
+      description: t('services.carpentryTiling.description'),
       icon: HiOutlineWrenchScrewdriver,
     },
   ];
@@ -57,10 +65,10 @@ export default function Home() {
       <section className="relative w-full h-screen flex items-center justify-center" style={{ backgroundColor: '#024885' }}>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Marium Trading & Contracting
+            {t('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            Fast, affordable, reliable workmanship for your construction and renovation needs in Yerevan
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -68,13 +76,13 @@ export default function Home() {
               className="px-8 py-4 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:opacity-90"
               style={{ backgroundColor: '#cd1e29' }}
             >
-              Our Services
+              {t('hero.ourServices')}
             </a>
             <a
               href="#about"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border-2 border-white/30 transition-colors duration-200 backdrop-blur-sm"
             >
-              Learn More
+              {t('hero.learnMore')}
             </a>
           </div>
         </div>
@@ -85,10 +93,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl pt-4 font-bold text-gray-900 mb-4">
-              Our Services
+              {t('services.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive construction and renovation solutions for residential and light commercial projects
+              {t('services.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,16 +118,16 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="pt-4">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                About Us
+                {t('about.title')}
               </h2>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                Marium Trading and Contracting LLC is a local construction and renovation specialist serving homeowners, property managers and small developers. Founded to bring dependable, practical solutions to everyday construction needs, we concentrate on work where craftsmanship and careful project management matter most.
+                {t('about.paragraph1')}
               </p>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                Our services include full interior renovations (kitchens, bathrooms, floors and finishes), exterior repairs and façades, carpentry, tiling, electrical and plumbing coordination, landscaping and garden design, and small road/pavement repairs.
+                {t('about.paragraph2')}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We work with trusted subcontractors and supply partners to ensure material quality while keeping costs competitive. Health and safety are priorities: our teams are insured and receive necessary medical support where required.
+                {t('about.paragraph3')}
               </p>
             </div>
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
@@ -139,7 +147,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Why Choose Us
+              {t('whyChooseUs.title')}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -147,27 +155,27 @@ export default function Home() {
               <div className="flex justify-center mb-4">
                 <HiOutlineHandRaised size={48} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Direct Contact</h3>
+              <h3 className="text-2xl font-bold mb-3">{t('whyChooseUs.directContact.title')}</h3>
               <p className="text-white/80">
-                As a small company, you benefit from direct contact with our team, flexible scheduling, and fast responses.
+                {t('whyChooseUs.directContact.description')}
               </p>
             </div>
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <HiOutlineCurrencyDollar size={48} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Transparent Pricing</h3>
+              <h3 className="text-2xl font-bold mb-3">{t('whyChooseUs.transparentPricing.title')}</h3>
               <p className="text-white/80">
-                We pride ourselves on transparent pricing, clear timelines, and practical problem-solving on site.
+                {t('whyChooseUs.transparentPricing.description')}
               </p>
             </div>
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <HiOutlineCheckCircle size={48} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Quality Workmanship</h3>
+              <h3 className="text-2xl font-bold mb-3">{t('whyChooseUs.qualityWorkmanship.title')}</h3>
               <p className="text-white/80">
-                Skilled workmanship and local know-how to protect your investment and improve the value of your property.
+                {t('whyChooseUs.qualityWorkmanship.description')}
               </p>
             </div>
           </div>
@@ -178,3 +186,4 @@ export default function Home() {
     </div>
   );
 }
+
