@@ -60,6 +60,20 @@
       "description": "Skilled workmanship and local know-how to protect your investment and improve the value of your property."
     }
   },
+  "owner": {
+    "badge": "Meet the Owner",
+    "title": "Leading with Experience & Dedication",
+    "description": "With years of hands-on experience in construction and renovation, our owner brings a personal commitment to every project. Combining professional expertise with genuine care for quality, we ensure that each job is completed to the highest standards while maintaining transparent communication throughout the process.",
+    "imageAlt": "Company owner and founder",
+    "experience": {
+      "title": "Years of Expertise",
+      "description": "Extensive experience in construction, renovation, and project management across residential and commercial projects."
+    },
+    "commitment": {
+      "title": "Personal Commitment",
+      "description": "Direct involvement in every project ensures attention to detail and customer satisfaction from start to finish."
+    }
+  },
   "footer": {
     "companyName": "Marium Trading & Contracting",
     "description": "Your trusted partner for construction and renovation services in Yerevan. Fast, affordable, reliable workmanship.",

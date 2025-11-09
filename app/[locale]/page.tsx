@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations } from 'next-intl/server';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import OwnerSection from "../components/OwnerSection";
 import ServiceCard from "../components/ServiceCard";
 import { 
   HiOutlineHome, 
@@ -181,6 +182,9 @@ export default async function Home({
           </div>
         </div>
       </section>
+
+      {/* Owner Section */}
+      <OwnerSection />
 
       <Footer />
     </div>
