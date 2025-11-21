@@ -32,6 +32,10 @@ export default function Header() {
         isScrolled
           ? "bg-white shadow-md"
           : "bg-transparent"
+      }  ${
+        isMenuOpen
+          ? "bg-white shadow-md"
+          : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +54,7 @@ export default function Header() {
             <a
               href="#services"
               className={`font-medium transition-colors ${
-                isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
+                isScrolled ? "text-gray-700 !hover:text-[#024885]" : "text-white !hover:text-white/80"
               }`}
             >
               {t('services')}
@@ -58,7 +62,7 @@ export default function Header() {
             <a
               href="#about"
               className={`font-medium transition-colors ${
-                isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
+                isScrolled ? "text-gray-700 !hover:text-[#024885]" : "text-white !hover:text-white/80"
               }`}
             >
               {t('about')}
@@ -70,8 +74,8 @@ export default function Header() {
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                 className={`px-4 py-2 rounded-lg transition-colors font-medium ${
                   isScrolled 
-                    ? "text-gray-700 hover:bg-gray-100" 
-                    : "text-white hover:bg-white/10"
+                    ? "text-gray-700 !hover:bg-gray-100" 
+                    : "text-white !hover:bg-white/10"
                 }`}
                 aria-label="Switch language"
               >
@@ -81,7 +85,7 @@ export default function Header() {
                 <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
                   <button
                     onClick={() => switchLanguage('en')}
-                    className={`w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors ${
+                    className={`w-full text-left px-4 py-2 !hover:bg-gray-100 transition-colors ${
                       locale === 'en' ? 'bg-blue-50 text-[#024885] font-semibold' : 'text-gray-700'
                     }`}
                   >
@@ -89,7 +93,7 @@ export default function Header() {
                   </button>
                   <button
                     onClick={() => switchLanguage('hy')}
-                    className={`w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors ${
+                    className={`w-full text-left px-4 py-2 !hover:bg-gray-100 transition-colors ${
                       locale === 'hy' ? 'bg-blue-50 text-[#024885] font-semibold' : 'text-gray-700'
                     }`}
                   >
@@ -101,7 +105,7 @@ export default function Header() {
             
             <a
               href="tel:+37498850187"
-              className="px-6 py-2 text-white font-semibold rounded-lg transition-opacity hover:opacity-90 flex items-center gap-2"
+              className="px-6 py-2 text-white font-semibold rounded-lg transition-opacity !hover:opacity-90 flex items-center gap-2"
               style={{ backgroundColor: '#cd1e29' }}
             >
               <svg
@@ -124,8 +128,8 @@ export default function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
               isScrolled
-                ? "text-gray-700 hover:bg-gray-100"
-                : "text-white hover:bg-white/10"
+                ? "text-gray-700 !hover:bg-gray-100"
+                : "text-white !hover:bg-white/10"
             }`}
             aria-label="Toggle menu"
           >
@@ -155,7 +159,9 @@ export default function Header() {
                 href="#services"
                 onClick={() => setIsMenuOpen(false)}
                 className={`font-medium transition-colors ${
-                  isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
+                  isScrolled ? "text-gray-700 !hover:text-[#024885]" : "text-white !hover:text-white/80" 
+                } ${
+                  isMenuOpen ? "!text-gray-700 !!hover:text-[#024885]" : "" 
                 }`}
               >
                 {t('services')}
@@ -164,7 +170,9 @@ export default function Header() {
                 href="#about"
                 onClick={() => setIsMenuOpen(false)}
                 className={`font-medium transition-colors ${
-                  isScrolled ? "text-gray-700 hover:text-[#024885]" : "text-white hover:text-white/80"
+                  isScrolled ? "text-gray-700 !hover:text-[#024885]" : "text-white !hover:text-white/80"
+                } ${
+                  isMenuOpen ? "!text-gray-700 !!hover:text-[#024885]" : "" 
                 }`}
               >
                 {t('about')}
@@ -183,6 +191,8 @@ export default function Header() {
                       : isScrolled
                       ? 'bg-gray-100 text-gray-700'
                       : 'bg-white/10 text-white'
+                  } ${
+                    isMenuOpen ? " !bg-gray-100 !text-gray-700" : "" 
                   }`}
                 >
                   English
@@ -198,6 +208,8 @@ export default function Header() {
                       : isScrolled
                       ? 'bg-gray-100 text-gray-700'
                       : 'bg-white/10 text-white'
+                  } ${
+                    isMenuOpen ? "!bg-gray-100 !text-gray-700" : "" 
                   }`}
                 >
                   Հայերեն
@@ -207,7 +219,7 @@ export default function Header() {
               <a
                 href="tel:+37498850187"
                 onClick={() => setIsMenuOpen(false)}
-                className="px-6 py-2 text-white font-semibold rounded-lg transition-opacity hover:opacity-90 text-center flex items-center justify-center gap-2"
+                className="px-6 py-2 text-white font-semibold rounded-lg transition-opacity !hover:opacity-90 text-center flex items-center justify-center gap-2"
                 style={{ backgroundColor: '#cd1e29' }}
               >
                 <svg
