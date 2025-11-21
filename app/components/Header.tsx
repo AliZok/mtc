@@ -44,6 +44,10 @@ export default function Header() {
             href="/"
             className={`text-2xl font-bold transition-colors ${
               isScrolled ? "text-[#024885]" : "text-white"
+            } ${
+              isMenuOpen
+                ? "!text-[#024885]"
+                : ""
             }`}
           >
             {t('companyName')}
@@ -130,6 +134,8 @@ export default function Header() {
               isScrolled
                 ? "text-gray-700 !hover:bg-gray-100"
                 : "text-white !hover:bg-white/10"
+            } ${
+              isMenuOpen ? "!text-gray-700 !hover:bg-gray-100" : "" 
             }`}
             aria-label="Toggle menu"
           >
