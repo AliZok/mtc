@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Marium Trading & Contracting LLC | Construction & Renovation Services",
   description: "Marium Trading and Contracting LLC is a Yerevan-based construction company specializing in residential and light commercial renovation, interior and exterior remodeling, garden landscaping, and small house construction.",
+  icons: {
+    icon: '/favicon-marium.jpg',
+  },
 };
 
 export default async function RootLayout({
